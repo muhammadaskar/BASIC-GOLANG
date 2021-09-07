@@ -1,41 +1,35 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"STRUCT/management"
+)
 
-type User struct {
-	id int
-	firstName string
-	lastName string
-	email string
-	isActive bool
-}
+
+
+
 
 func main()  {
-	user := User{}
-	user.id = 1
-	user.firstName = "Muhammad"
-	user.lastName = "Askar"
-	user.email = "user@email.com"
-	user.isActive = true
+	user := management.User{1, "Muhammad", "Askar", "askar@gmail.com", "Male", true}
 
-	user2 := User{
-		id : 2,
-		firstName : "Muhammad",
-		lastName : "Aswad",
-		email : "user2@gmail.com",
-		isActive : true,
-	}
+	result := user.Display()
+	fmt.Println(result)
+	
+	
+	user2 := management.User{2, "Muhammad", "Aswad", "aswad@gmail.com", "Male" , true}
+	
+	result2 := user2.Display()
+	fmt.Println(result2)
 
-	user3 := User{
-		3,
-		"Maulidya",
-		"Lidya",
-		"user3@gmail.com",
-		true,
-	}
+	fmt.Println("---------------------")
 
+	pp := management.PersegiPanjang{5, 3}
+	// hasil := pp.luas
+	fmt.Println("Hasil Luas Persegi Panjang : ", pp.LuasPersegiPanjang())
 
-	fmt.Println(user)
-	fmt.Println(user2)
-	fmt.Println(user3)
+	// users := []management.User{user, user2}
+	// group := management.Group{"Gamer", user, users, true}
+
+	// group.DisplayGroup()
+
 }

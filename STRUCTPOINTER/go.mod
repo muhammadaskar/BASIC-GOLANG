@@ -1,0 +1,3 @@
+module STRUCTPOINTER
+
+go 1.16
